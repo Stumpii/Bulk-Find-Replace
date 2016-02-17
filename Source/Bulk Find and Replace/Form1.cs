@@ -98,10 +98,33 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!File.Exists(fileTextboxInput.AbsolutePath))
+            {
+                MessageBox.Show("Input file does not exist.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //Read input file
+            try
+            {
+                scintillaFind.Text= File.ReadAllText(fileTextboxInput.AbsolutePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reading input: " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             PerformReplacement();
 
-            //if (fileTextboxOutput.FileExists)
-            System.IO.File.WriteAllText(fileTextboxOutput.AbsolutePath, scintillaReplace.Text);
+            //Write output
+            try
+            {
+            File.WriteAllText(fileTextboxOutput.AbsolutePath, scintillaReplace.Text);
+                            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error writing output: " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void mnuFileExit_Click_1(object sender, EventArgs e)
