@@ -70,13 +70,6 @@ a.rvts12, span.rvts12 /* Font Style */
  color: #6666ff;
  text-decoration: underline;
 }
-span.rvts13
-{
- font-size: 9.5pt;
- font-family: 'Consolas';
- color: #000000;
- background-color: #ffffff;
-}
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
@@ -106,4 +99,8 @@ p,ul,ol /* Paragraph Style */
  border-left: none;
  padding: 2px 0px 2px 0px;
  margin: 7px 0px 7px 0px;
+}
+.rvps5
+{
+ text-indent: 48px;
 }
