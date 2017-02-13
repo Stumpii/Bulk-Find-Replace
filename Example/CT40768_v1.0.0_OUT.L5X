@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="19.01" TargetName="PDI50_CMP" TargetType="Controller" ContainsContext="false" Owner="Dresser-Rand, Dresser-Rand" ExportDate="Fri Apr 04 15:53:01 2014" ExportOptions="DecoratedData ForceProtectedEncoding AllProjDocTrans">
-<Controller Use="Target" Name="PDI50_CMP" ProcessorType="1756-L73" MajorRev="19" MinorRev="11" TimeSlice="15" ShareUnusedTimeSlice="1" PowerLossProgram="StartUp" ProjectCreationDate="Wed Apr 02 08:25:37 2014" LastModifiedDate="Fri Apr 04 14:52:23 2014" SFCExecutionControl="CurrentActive"
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="19.01" TargetName="PD2750_CMP" TargetType="Controller" ContainsContext="false" Owner="Dresser-Rand, Dresser-Rand" ExportDate="Fri Apr 04 15:53:01 2014" ExportOptions="DecoratedData ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Target" Name="PD2750_CMP" ProcessorType="1756-L73" MajorRev="19" MinorRev="11" TimeSlice="15" ShareUnusedTimeSlice="1" PowerLossProgram="StartUp" ProjectCreationDate="Wed Apr 02 08:25:37 2014" LastModifiedDate="Fri Apr 04 14:52:23 2014" SFCExecutionControl="CurrentActive"
  SFCRestartPosition="MostRecent" SFCLastScan="DontScan" CommPath="AB_ETH-1\10.129.132.4\Backplane\0" ProjectSN="16#006d_81cc" MatchProjectToController="false" CanUseRPIFromProducer="false" InhibitAutomaticFirmwareUpdate="0">
 <Description>
 <![CDATA[KINDER MORGAN - STATION 104
@@ -13011,17 +13011,17 @@ E8 03 00 00 00 00 00 00 1B 77 27 00 E8 03 00 00
 <![CDATA[VE-467X GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER SIGNAL FAIL ALM182]]>
 </Description>
 </Tag>
-<Tag Name="ALM_VE_467Y_HJKHJDKHD_HIHI_SD_DV" TagType="Alias" Radix="Decimal" AliasFor="ALM[10].29" ExternalAccess="Read/Write">
+<Tag Name="ALM_VE_467Y_HIHI_SD_DV" TagType="Alias" Radix="Decimal" AliasFor="ALM[10].29" ExternalAccess="Read/Write">
 <Description>
 <![CDATA[VAHH-467Y GEAR HS SHAFT NON-DRIVE END RADIAL Y VIBRATION HIGH>2.50 MILS SDNV094]]>
 </Description>
 </Tag>
-<Tag Name="ALM_VE_467Y_HJKHJDKHD_HI_AL_DV" TagType="Alias" Radix="Decimal" AliasFor="ALM[5].22" ExternalAccess="Read/Write">
+<Tag Name="ALM_VE_467Y_HI_AL_DV" TagType="Alias" Radix="Decimal" AliasFor="ALM[5].22" ExternalAccess="Read/Write">
 <Description>
 <![CDATA[VAH-467Y GEAR HS SHAFT NON-DRIVE END RADIAL Y VIBRATION HIGH>1.75 MILS ALM183]]>
 </Description>
 </Tag>
-<Tag Name="ALM_VE_467Y_HJKHJDKHD_SF_AL_DV" TagType="Alias" Radix="Decimal" AliasFor="ALM[5].23" ExternalAccess="Read/Write">
+<Tag Name="ALM_VE_467Y_SF_AL_DV" TagType="Alias" Radix="Decimal" AliasFor="ALM[5].23" ExternalAccess="Read/Write">
 <Description>
 <![CDATA[VE-467Y GEAR HS SHAFT NON-DRIVE END RADIAL Y VIBRATION TRANSMITTER SIGNAL FAIL ALM184]]>
 </Description>
@@ -31975,7 +31975,7 @@ A5 26 BF 42 B1 4A 9B C3 2E 08 CB 42 A9 89 D1 42
 </Structure>
 </Data>
 </Tag>
-<Tag Name="PLC_RTD05_CH0" TagType="Alias" Radix="Float" AliasFor="PLC_RTD05.Ch0Data" ExternalAccess="Read/Write">
+<Tag Name="PLC_RTD15_CH0" TagType="Alias" Radix="Float" AliasFor="PLC_RTD05.Ch0Data" ExternalAccess="Read/Write">
 <Description>
 <![CDATA[RTD Input Module No.5 Channel 0]]>
 </Description>
@@ -32333,7 +32333,7 @@ C6 7B 8F 42 E7 FD FD 41 1E EB 00 42 E6 23 03 42
 <DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
 </Data>
 </Tag>
-<Tag Name="PRG_SEQ_DN_DI_PU" TagType="Alias" Radix="Decimal" AliasFor="STATUS[1].19" ExternalAccess="Read/Write">
+<Tag Name="PRG_START_SEQ_DN_DI_PU" TagType="Alias" Radix="Decimal" AliasFor="STATUS[1].19" ExternalAccess="Read/Write">
 <Description>
 <![CDATA[PURGE SEQ DONE OR SYSTEM HAVE BEEN PURGED]]>
 </Description>
@@ -41517,82 +41517,82 @@ output
 <DataValue DataType="REAL" Radix="Float" Value="0.0"/>
 </Data>
 </Tag>
-<Tag Name="XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Tag Name="XE1307X_GBHSS_NDE_RAD_VIB_FI_PU" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
 <Description>
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03]]>
 </Description>
 <Data>00 00 00 00</Data>
 <Data Format="Decorated">
 <DataValue DataType="REAL" Radix="Float" Value="0.0"/>
 </Data>
 </Tag>
-<Tag Name="XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_GV" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Tag Name="XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_GV" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
 <Description>
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03]]>
 </Description>
 <Data>00 00 00 00</Data>
 <Data Format="Decorated">
 <DataValue DataType="REAL" Radix="Float" Value="0.0"/>
 </Data>
 </Tag>
-<Tag Name="XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_GV_TMP" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Tag Name="XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_GV_TMP" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
 <Description>
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03]]>
 </Description>
 <Data>00 00 00 00</Data>
 <Data Format="Decorated">
 <DataValue DataType="REAL" Radix="Float" Value="0.0"/>
 </Data>
 </Tag>
-<Tag Name="XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_HH_TMP" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Tag Name="XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_HH_TMP" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
 <Description>
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03 HH ALARM]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03 HH ALARM]]>
 </Description>
 <Data>00 00 00 00</Data>
 <Data Format="Decorated">
 <DataValue DataType="REAL" Radix="Float" Value="0.0"/>
 </Data>
 </Tag>
-<Tag Name="XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_H_TMP" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Tag Name="XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_H_TMP" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
 <Description>
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03 H ALARM]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03 H ALARM]]>
 </Description>
 <Data>00 00 00 00</Data>
 <Data Format="Decorated">
 <DataValue DataType="REAL" Radix="Float" Value="0.0"/>
 </Data>
 </Tag>
-<Tag Name="XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_LM5" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Tag Name="XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_LM5" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
 <Description>
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03 H ALARM]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03 H ALARM]]>
 </Description>
 <Data>00 00 00 00</Data>
 <Data Format="Decorated">
 <DataValue DataType="REAL" Radix="Float" Value="0.0"/>
 </Data>
 </Tag>
-<Tag Name="XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_LM6" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Tag Name="XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_LM6" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
 <Description>
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03 HH ALARM]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03 HH ALARM]]>
 </Description>
 <Data>00 00 00 00</Data>
 <Data Format="Decorated">
 <DataValue DataType="REAL" Radix="Float" Value="0.0"/>
 </Data>
 </Tag>
-<Tag Name="XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_STAT" TagType="Base" DataType="INT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Tag Name="XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_STAT" TagType="Base" DataType="INT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
 <Description>
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER]]>
 </Description>
 <Comments>
 <Comment Operand=".0">
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER SIG FAIL]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER SIG FAIL]]>
 </Comment>
 <Comment Operand=".1">
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER H ALM]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER H ALM]]>
 </Comment>
 <Comment Operand=".2">
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER HH ALM]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER HH ALM]]>
 </Comment>
 </Comments>
 <Data>00 02</Data>
@@ -41600,9 +41600,9 @@ output
 <DataValue DataType="INT" Radix="Decimal" Value="512"/>
 </Data>
 </Tag>
-<Tag Name="XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_TMP" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Tag Name="XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_TMP" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
 <Description>
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL X VIBRATION TRANSMITTER BN-06/03]]>
 </Description>
 <Data>00 00 00 00</Data>
 <Data Format="Decorated">
@@ -45247,7 +45247,7 @@ All  alarms consist a timer that can be used if required.  These alarms will sel
 </Rung>
 <Rung Number="362" Type="N">
 <Text>
-<![CDATA[XIC(XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_STAT.1)XIO(ALM_VE_467X_SF_AL_DV)TON(ALM_TMRS[180],?,?);]]>
+<![CDATA[XIC(XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_STAT.1)XIO(ALM_VE_467X_SF_AL_DV)TON(ALM_TMRS[180],?,?);]]>
 </Text>
 </Rung>
 <Rung Number="363" Type="N">
@@ -45257,7 +45257,7 @@ All  alarms consist a timer that can be used if required.  These alarms will sel
 </Rung>
 <Rung Number="364" Type="N">
 <Text>
-<![CDATA[XIC(XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_STAT.0)TON(ALM_TMRS[181],?,?);]]>
+<![CDATA[XIC(XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_STAT.0)TON(ALM_TMRS[181],?,?);]]>
 </Text>
 </Rung>
 <Rung Number="365" Type="N">
@@ -45267,12 +45267,12 @@ All  alarms consist a timer that can be used if required.  These alarms will sel
 </Rung>
 <Rung Number="366" Type="N">
 <Text>
-<![CDATA[XIC(XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_STAT.1)XIO(ALM_VE_467Y_HJKHJDKHD_SF_AL_DV)TON(ALM_TMRS[182],?,?);]]>
+<![CDATA[XIC(XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_STAT.1)XIO(ALM_VE_467Y_SF_AL_DV)TON(ALM_TMRS[182],?,?);]]>
 </Text>
 </Rung>
 <Rung Number="367" Type="N">
 <Text>
-<![CDATA[XIC(ALM_TMRS[182].DN)OTE(ALM_VE_467Y_HJKHJDKHD_HI_AL_DV);]]>
+<![CDATA[XIC(ALM_TMRS[182].DN)OTE(ALM_VE_467Y_HI_AL_DV);]]>
 </Text>
 </Rung>
 <Rung Number="368" Type="N">
@@ -45282,7 +45282,7 @@ All  alarms consist a timer that can be used if required.  These alarms will sel
 </Rung>
 <Rung Number="369" Type="N">
 <Text>
-<![CDATA[XIC(ALM_TMRS[183].DN)OTE(ALM_VE_467Y_HJKHJDKHD_SF_AL_DV);]]>
+<![CDATA[XIC(ALM_TMRS[183].DN)OTE(ALM_VE_467Y_SF_AL_DV);]]>
 </Text>
 </Rung>
 <Rung Number="370" Type="N">
@@ -46977,7 +46977,7 @@ After a unit start sequence has been initiated, the booster (SV-1000) will be en
 <![CDATA[XE1308Y_GBHSS_DE_RAD_VIB_FI_PU_TMP := MCMR_01.ReadData[213]; (*XE1308Y_GBHSS_DE_RAD_VIB_FI_PU GEAR HS SHAFT DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="19">
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_TMP := MCMR_01.ReadData[214]; (*XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_TMP := MCMR_01.ReadData[214]; (*XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="20">
 <![CDATA[XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_TMP := MCMR_01.ReadData[215]; (*XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
@@ -47076,7 +47076,7 @@ After a unit start sequence has been initiated, the booster (SV-1000) will be en
 <![CDATA[XE1308Y_GBHSS_DE_RAD_VIB_FI_PU_GV_TMP := MCMR_01.ReadData[243]; (*XE1308Y_GBHSS_DE_RAD_VIB_FI_PU GEAR HS SHAFT DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="52">
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_GV_TMP := MCMR_01.ReadData[244]; (*XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_GV_TMP := MCMR_01.ReadData[244]; (*XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="53">
 <![CDATA[XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_GV_TMP := MCMR_01.ReadData[245]; (*XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
@@ -47157,7 +47157,7 @@ After a unit start sequence has been initiated, the booster (SV-1000) will be en
 <![CDATA[XE1308Y_GBHSS_DE_RAD_VIB_FI_PU_STAT := MCMR_01.ReadData[271]; (*XE1308Y_GBHSS_DE_RAD_VIB_FI_PU GEAR HS SHAFT DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="79">
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_STAT := MCMR_01.ReadData[272]; (*XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_STAT := MCMR_01.ReadData[272]; (*XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="80">
 <![CDATA[XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_STAT := MCMR_01.ReadData[273]; (*XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
@@ -47272,7 +47272,7 @@ After a unit start sequence has been initiated, the booster (SV-1000) will be en
 <![CDATA[XE1308Y_GBHSS_DE_RAD_VIB_FI_PU_TMP := MCMR_01.ReadData[213]; (*XE1308Y_GBHSS_DE_RAD_VIB_FI_PU GEAR HS SHAFT DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="19">
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_TMP := MCMR_01.ReadData[214]; (*XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_TMP := MCMR_01.ReadData[214]; (*XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="20">
 <![CDATA[XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_TMP := MCMR_01.ReadData[215]; (*XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
@@ -47371,7 +47371,7 @@ After a unit start sequence has been initiated, the booster (SV-1000) will be en
 <![CDATA[XE1308Y_GBHSS_DE_RAD_VIB_FI_PU_GV_TMP := MCMR_01.ReadData[243]; (*XE1308Y_GBHSS_DE_RAD_VIB_FI_PU GEAR HS SHAFT DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="52">
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_GV_TMP := MCMR_01.ReadData[244]; (*XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_GV_TMP := MCMR_01.ReadData[244]; (*XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="53">
 <![CDATA[XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_GV_TMP := MCMR_01.ReadData[245]; (*XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
@@ -47452,7 +47452,7 @@ After a unit start sequence has been initiated, the booster (SV-1000) will be en
 <![CDATA[XE1308Y_GBHSS_DE_RAD_VIB_FI_PU_STAT := MCMR_01.ReadData[271]; (*XE1308Y_GBHSS_DE_RAD_VIB_FI_PU GEAR HS SHAFT DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="79">
-<![CDATA[XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_STAT := MCMR_01.ReadData[272]; (*XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
+<![CDATA[XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_STAT := MCMR_01.ReadData[272]; (*XE1307X_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "X" VIBRATION TRANSMITTER*)]]>
 </Line>
 <Line Number="80">
 <![CDATA[XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_STAT := MCMR_01.ReadData[273]; (*XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU GEAR HS SHAFT NON-DRIVE END RADIAL "Y" VIBRATION TRANSMITTER*)]]>
@@ -49101,7 +49101,7 @@ has been confirmed it is below min. speed.]]>
 </Rung>
 <Rung Number="6" Type="N">
 <Text>
-<![CDATA[[XIC(UNIT_START_HOLD) XIC(UNIT_NRML_STOP) [XIO(PRG_SEQ_DN_DI_PU) ,XIO(PRES_SEQ_DN_DI_PU) ] ,XIC(VLV_SEQ_ABORT) XIO(UNIT_VLV_SDV_POS_DI_PU) ]XIO(XR2520_MDM_RUN_LATCH)OTE(VLV_SEQ_ABORT);]]>
+<![CDATA[[XIC(UNIT_START_HOLD) XIC(UNIT_NRML_STOP) [XIO(PRG_START_SEQ_DN_DI_PU) ,XIO(PRES_SEQ_DN_DI_PU) ] ,XIC(VLV_SEQ_ABORT) XIO(UNIT_VLV_SDV_POS_DI_PU) ]XIO(XR2520_MDM_RUN_LATCH)OTE(VLV_SEQ_ABORT);]]>
 </Text>
 </Rung>
 <Rung Number="7" Type="N">
@@ -49573,7 +49573,7 @@ Unit Permissive to Start coil to be set.]]>
 <![CDATA[the following routine is to control seal gas flow to compressor driver end and non-driver end (low selector) from the seal gas inlet control valve (FY1611-FO), reverse action]]>
 </Comment>
 <Text>
-<![CDATA[XIC(UNIT_START_HOLD)XIC(PRG_SEQ_STRT_DI_PU)XIO(PRG_SEQ_DN_DI_PU)[OTE(CNTRL_TO_MANUAL) ,MOV(75,WW_FC_OUT_FO_FU) ];]]>
+<![CDATA[XIC(UNIT_START_HOLD)XIC(PRG_SEQ_STRT_DI_PU)XIO(PRG_START_SEQ_DN_DI_PU)[OTE(CNTRL_TO_MANUAL) ,MOV(75,WW_FC_OUT_FO_FU) ];]]>
 </Text>
 </Rung>
 <Rung Number="1" Type="N">
@@ -49583,7 +49583,7 @@ Unit Permissive to Start coil to be set.]]>
 </Rung>
 <Rung Number="2" Type="N">
 <Text>
-<![CDATA[XIC(UNIT_START_HOLD)XIC(PRG_SEQ_DN_DI_PU)TON(MAN_MODE_DISABLE_TMR,?,?);]]>
+<![CDATA[XIC(UNIT_START_HOLD)XIC(PRG_START_SEQ_DN_DI_PU)TON(MAN_MODE_DISABLE_TMR,?,?);]]>
 </Text>
 </Rung>
 <Rung Number="3" Type="N">
@@ -51292,7 +51292,7 @@ return to a "Normal" safe operating state.]]>
 </Rung>
 <Rung Number="184" Type="N">
 <Text>
-<![CDATA[XIC(XE1307X_NEW_GBHSS_NDE_RAD_VIB_FI_PU_STAT.2)XIO(ALM_VE_467X_SF_AL_DV)TON(TMR_ALARM_SD[92],?,?);]]>
+<![CDATA[XIC(XE1307X_GBHSS_NDE_RAD_VIB_FI_PU_STAT.2)XIO(ALM_VE_467X_SF_AL_DV)TON(TMR_ALARM_SD[92],?,?);]]>
 </Text>
 </Rung>
 <Rung Number="185" Type="N">
@@ -51302,12 +51302,12 @@ return to a "Normal" safe operating state.]]>
 </Rung>
 <Rung Number="186" Type="N">
 <Text>
-<![CDATA[XIC(XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_STAT.2)XIO(ALM_VE_467Y_HJKHJDKHD_SF_AL_DV)TON(TMR_ALARM_SD[93],?,?);]]>
+<![CDATA[XIC(XE1307Y_GBHSS_NDE_RAD_VIB_FI_PU_STAT.2)XIO(ALM_VE_467Y_SF_AL_DV)TON(TMR_ALARM_SD[93],?,?);]]>
 </Text>
 </Rung>
 <Rung Number="187" Type="N">
 <Text>
-<![CDATA[[XIC(TMR_ALARM_SD[93].DN) ,XIC(ALM_VE_467Y_HJKHJDKHD_HIHI_SD_DV) XIO(MSTR_RESET) ]XIO(SD_BYPASS[2].29)OTE(ALM_VE_467Y_HJKHJDKHD_HIHI_SD_DV);]]>
+<![CDATA[[XIC(TMR_ALARM_SD[93].DN) ,XIC(ALM_VE_467Y_HIHI_SD_DV) XIO(MSTR_RESET) ]XIO(SD_BYPASS[2].29)OTE(ALM_VE_467Y_HIHI_SD_DV);]]>
 </Text>
 </Rung>
 <Rung Number="188" Type="N">
@@ -51722,7 +51722,7 @@ return to a "Normal" safe operating state.]]>
 </Rung>
 <Rung Number="12" Type="N">
 <Text>
-<![CDATA[XIC(PRG_SEQ_DN_DI_PU)MOV(1000,TMR_ALARM_SD[134].PRE);]]>
+<![CDATA[XIC(PRG_START_SEQ_DN_DI_PU)MOV(1000,TMR_ALARM_SD[134].PRE);]]>
 </Text>
 </Rung>
 <Rung Number="13" Type="N">
@@ -51737,7 +51737,7 @@ return to a "Normal" safe operating state.]]>
 </Rung>
 <Rung Number="15" Type="N">
 <Text>
-<![CDATA[XIC(PRG_SEQ_DN_DI_PU)MOV(1000,TMR_ALARM_SD[135].PRE);]]>
+<![CDATA[XIC(PRG_START_SEQ_DN_DI_PU)MOV(1000,TMR_ALARM_SD[135].PRE);]]>
 </Text>
 </Rung>
 <Rung Number="16" Type="N">
@@ -52036,7 +52036,7 @@ return to a "Normal" safe operating state.]]>
 </Rung>
 <Rung Number="4" Type="N">
 <Text>
-<![CDATA[[XIC(START_SEQ.3) XIC(PRG_SEQ_DN_DI_PU) ,XIC(START_SEQ.4) [XIO(UNIT_START_INITIATED) ,XIC(UNIT_START_HOLD_DLY) ] ]XIO(WW_HMI_STATUS_RST)OTE(START_SEQ.4);]]>
+<![CDATA[[XIC(START_SEQ.3) XIC(PRG_START_SEQ_DN_DI_PU) ,XIC(START_SEQ.4) [XIO(UNIT_START_INITIATED) ,XIC(UNIT_START_HOLD_DLY) ] ]XIO(WW_HMI_STATUS_RST)OTE(START_SEQ.4);]]>
 </Text>
 </Rung>
 <Rung Number="5" Type="N">
@@ -52363,17 +52363,17 @@ program for internal logic status of pumps,motors, valves, modes.etc......]]>
 </Rung>
 <Rung Number="50" Type="N">
 <Text>
-<![CDATA[XIC(UNIT_STRT_SEQ_ACT_DI_PU)XIC(UNIT_AUX_SEQ_CMPLT)XIC(UNIT_START_HOLD)[XIC(UNIT_VLV_PRG_POS_DI_PU) ,XIC(PRG_SEQ_STRT_DI_PU) ]XIO(PRG_SEQ_DN_DI_PU)OTE(PRG_SEQ_STRT_DI_PU);]]>
+<![CDATA[XIC(UNIT_STRT_SEQ_ACT_DI_PU)XIC(UNIT_AUX_SEQ_CMPLT)XIC(UNIT_START_HOLD)[XIC(UNIT_VLV_PRG_POS_DI_PU) ,XIC(PRG_SEQ_STRT_DI_PU) ]XIO(PRG_START_SEQ_DN_DI_PU)OTE(PRG_SEQ_STRT_DI_PU);]]>
 </Text>
 </Rung>
 <Rung Number="51" Type="N">
 <Text>
-<![CDATA[[XIC(PRG_SEQ_STRT_DI_PU) XIC(Timer_032.DN) ,XIC(UNIT_VLV_SDNV_POS_DI_PU) ,XIC(PRG_SEQ_DN_DI_PU) ]XIC(UNIT_START_HOLD)OTE(PRG_SEQ_DN_DI_PU);]]>
+<![CDATA[[XIC(PRG_SEQ_STRT_DI_PU) XIC(Timer_032.DN) ,XIC(UNIT_VLV_SDNV_POS_DI_PU) ,XIC(PRG_START_SEQ_DN_DI_PU) ]XIC(UNIT_START_HOLD)OTE(PRG_START_SEQ_DN_DI_PU);]]>
 </Text>
 </Rung>
 <Rung Number="52" Type="N">
 <Text>
-<![CDATA[XIC(UNIT_AUX_SEQ_CMPLT)XIC(UNIT_START_HOLD)XIC(PRG_SEQ_DN_DI_PU)XIO(PRG_SEQ_IN_PROG)XIO(PRES_SEQ_DN_DI_PU)OTE(PRES_SEQ_STRT_DI_PU);]]>
+<![CDATA[XIC(UNIT_AUX_SEQ_CMPLT)XIC(UNIT_START_HOLD)XIC(PRG_START_SEQ_DN_DI_PU)XIO(PRG_SEQ_IN_PROG)XIO(PRES_SEQ_DN_DI_PU)OTE(PRES_SEQ_STRT_DI_PU);]]>
 </Text>
 </Rung>
 <Rung Number="53" Type="N">
@@ -53686,7 +53686,7 @@ step 2:anti-surge/recycle line purge
 step 3: compressor casing purge]]>
 </Comment>
 <Text>
-<![CDATA[[XIO(PRG_SEQ_STRT_DI_PU) ,XIC(PRG_SEQ_DN_DI_PU) ]MOV(0,PRG_SEQ_STEPS);]]>
+<![CDATA[[XIO(PRG_SEQ_STRT_DI_PU) ,XIC(PRG_START_SEQ_DN_DI_PU) ]MOV(0,PRG_SEQ_STEPS);]]>
 </Text>
 </Rung>
 <Rung Number="1" Type="N">
@@ -53815,7 +53815,7 @@ step 3: compressor casing purge]]>
 </Rung>
 <Rung Number="24" Type="N">
 <Text>
-<![CDATA[XIC(PRG_SEQ_DN_DI_PU)OTE(PURG_STEP_3);]]>
+<![CDATA[XIC(PRG_START_SEQ_DN_DI_PU)OTE(PURG_STEP_3);]]>
 </Text>
 </Rung>
 </RLLContent>

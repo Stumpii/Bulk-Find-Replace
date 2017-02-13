@@ -74,20 +74,22 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.2-beta2\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ScintillaNET, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\_Standard Components by Others\ScintillaNet 3\ScintillaNET-master\src\ScintillaNET\bin\Release\ScintillaNET.dll</HintPath>
+    <Reference Include="ScintillaNET FindReplaceDialog">
+      <HintPath>..\..\..\..\_Standard Components\ScintillaNET-FindReplaceDialog\ScintillaNet FindReplaceDialog\bin\Release\ScintillaNET FindReplaceDialog.dll</HintPath>
     </Reference>
-    <Reference Include="SNT.FileFolderTextBox">
-      <HintPath>..\..\..\_Standard Components\SNT.FileFolderTextBox\SNT.FileFolderTextBox\bin\Release\SNT.FileFolderTextBox.dll</HintPath>
+    <Reference Include="ScintillaNET, Version=3.5.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.5.10\lib\net40\ScintillaNET.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="SNT.Tools, Version=1.2.0.12451, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\_Standard Components\SNT.Tools\SNT.Tools\bin\Debug\SNT.Tools.dll</HintPath>
+    <Reference Include="SNT.FileFolderTextBox.3.5">
+      <HintPath>..\..\..\..\_Standard Components\SNT.FileFolderTextBox\SNT.FileFolderTextBox.3.5\bin\Release\SNT.FileFolderTextBox.3.5.dll</HintPath>
+    </Reference>
+    <Reference Include="SNT.Tools35">
+      <HintPath>..\..\..\..\_Standard Components\SNT.Tools\SNT.Tools.3.5\bin\Release\SNT.Tools35.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

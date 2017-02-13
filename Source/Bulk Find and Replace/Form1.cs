@@ -12,12 +12,19 @@
     using System.Linq;
     using System.Text;
     using System.Windows.Forms;
+    using ScintillaNET_FindReplaceDialog;
 
     public partial class Form1 : Form
     {
         #region Fields
 
+        private FindReplace myAfterFindReplace;
+
+        // Declare variable for FindReplace dialog
+        private FindReplace myBeforeFindReplace;
+
         private ProgramSettings programSettings = new ProgramSettings();
+        private List<ScintillaNET_FindReplaceDialog.CharacterRange> ReplaceAllInstances = new List<ScintillaNET_FindReplaceDialog.CharacterRange>();
 
         #endregion Fields
 
@@ -26,11 +33,56 @@
         public Form1()
         {
             InitializeComponent();
+
+            // Create instance of FindReplace with reference to a ScintillaNET control.
+            myBeforeFindReplace = new FindReplace(scintillaFind);
+            myBeforeFindReplace.KeyPressed += myBeforeFindReplace_KeyPressed;
+            myAfterFindReplace = new FindReplace(scintillaReplace);
+            myAfterFindReplace.KeyPressed += myAfterFindReplace_KeyPressed;
+
+            scintillaFind.KeyDown += myBeforeFindReplace_KeyDown;
+            scintillaReplace.KeyDown += myAfterFindReplace_KeyDown;
         }
 
         #endregion Constructors
 
-        #region Form Event Handlers
+        #region Methods
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(fileTextboxInput.AbsolutePath))
+            {
+                MessageBox.Show("Input file does not exist.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //Read input file
+            try
+            {
+                scintillaFind.Text = File.ReadAllText(fileTextboxInput.AbsolutePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reading input: " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            PerformReplacement();
+
+            //Write output
+            try
+            {
+                File.WriteAllText(fileTextboxOutput.AbsolutePath, scintillaReplace.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error writing output: " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void fileTextboxInput_SelectedItemChanged(bool IsValid)
+        {
+            scintillaFind.Text = System.IO.File.ReadAllText(fileTextboxInput.AbsolutePath);
+        }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -41,8 +93,8 @@
             programSettings.ReplaceText = scintillaReplace.Text;
             programSettings.SelectedInputFile = fileTextboxInput.Text;
             programSettings.SelectedOutputFile = fileTextboxOutput.Text;
-            programSettings.InputFilesDropdownList = fileTextboxInput.DropDownList;
-            programSettings.OutputFilesDropdownList = fileTextboxOutput.DropDownList;
+            programSettings.InputFilesDropdownList = fileTextboxInput.RecentItemsString.Split(new char[] { '|' }).ToList<string>();
+            programSettings.OutputFilesDropdownList = fileTextboxOutput.RecentItemsString.Split(new char[] { '|' }).ToList<string>(); ;
 
             // serialize JSON directly to a file
             string settingsFilename = Path.Combine(Application.StartupPath, "Program Settings.json");
@@ -86,45 +138,10 @@
             scintillaReplace.Text = "";
             fileTextboxInput.Text = programSettings.SelectedInputFile;
             fileTextboxOutput.Text = programSettings.SelectedOutputFile;
-            fileTextboxInput.DropDownList = programSettings.InputFilesDropdownList;
-            fileTextboxOutput.DropDownList = programSettings.OutputFilesDropdownList;
+            fileTextboxInput.RecentItemsString = string.Join("|", programSettings.InputFilesDropdownList);
+            fileTextboxOutput.RecentItemsString = string.Join("|", programSettings.OutputFilesDropdownList);
 
             //PerformReplacement();
-        }
-
-        #endregion Form Event Handlers
-
-        #region Event Handlers
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!File.Exists(fileTextboxInput.AbsolutePath))
-            {
-                MessageBox.Show("Input file does not exist.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            //Read input file
-            try
-            {
-                scintillaFind.Text= File.ReadAllText(fileTextboxInput.AbsolutePath);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error reading input: " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-
-            PerformReplacement();
-
-            //Write output
-            try
-            {
-            File.WriteAllText(fileTextboxOutput.AbsolutePath, scintillaReplace.Text);
-                            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error writing output: " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
         }
 
         private void mnuFileExit_Click_1(object sender, EventArgs e)
@@ -132,26 +149,91 @@
             this.Close();
         }
 
-        private void uxCaseSensitive_CheckedChanged(object sender, EventArgs e)
+        private void myAfterFindReplace_KeyDown(object sender, KeyEventArgs e)
         {
-            //PerformReplacement();
+            if (e.Control && e.KeyCode == Keys.F)
+            {
+                myAfterFindReplace.ShowFind();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.Shift && e.KeyCode == Keys.F3)
+            {
+                myAfterFindReplace.Window.FindPrevious();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.KeyCode == Keys.F3)
+            {
+                myAfterFindReplace.Window.FindNext();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.H)
+            {
+                myAfterFindReplace.ShowReplace();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.I)
+            {
+                myAfterFindReplace.ShowIncrementalSearch();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.G)
+            {
+                GoTo MyGoTo = new GoTo((Scintilla)sender);
+                MyGoTo.ShowGoToDialog();
+                e.SuppressKeyPress = true;
+            }
         }
 
-        #endregion Event Handlers
-
-        #region Methods
-
-        private void fileTextboxInput_FileChanged(bool IsValid)
+        private void myAfterFindReplace_KeyPressed(object sender, KeyEventArgs e)
         {
-            scintillaFind.Text = System.IO.File.ReadAllText(fileTextboxInput.AbsolutePath);
+            myAfterFindReplace_KeyDown(sender, e);
+        }
+
+        private void myBeforeFindReplace_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.F)
+            {
+                myBeforeFindReplace.ShowFind();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.Shift && e.KeyCode == Keys.F3)
+            {
+                myBeforeFindReplace.Window.FindPrevious();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.KeyCode == Keys.F3)
+            {
+                myBeforeFindReplace.Window.FindNext();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.H)
+            {
+                myBeforeFindReplace.ShowReplace();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.I)
+            {
+                myBeforeFindReplace.ShowIncrementalSearch();
+                e.SuppressKeyPress = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.G)
+            {
+                GoTo MyGoTo = new GoTo((Scintilla)sender);
+                MyGoTo.ShowGoToDialog();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void myBeforeFindReplace_KeyPressed(object sender, KeyEventArgs e)
+        {
+            myBeforeFindReplace_KeyDown(sender, e);
         }
 
         private void PerformReplacement()
         {
-            scintillaFind.FindReplace.ClearAllHighlights();
-            scintillaReplace.FindReplace.ClearAllHighlights();
-
             scintillaReplace.Text = scintillaFind.Text;
+            myBeforeFindReplace.ClearAllHighlights();
+            myAfterFindReplace.ClearAllHighlights();
 
             if (uxFindList.Lines.Count != uxReplaceList.Lines.Count)
                 return;
@@ -167,37 +249,62 @@
             for (int i = 0; i < uxFindList.Lines.Count; i++)
             {
                 string FindItem = uxFindList.Lines[i].Text.TrimEnd('\r', '\n');
-                if (FindItem == string.Empty)
-                    continue;
+                if (FindItem == string.Empty) continue;
+                string ReplaceItem = uxReplaceList.Lines[i].Text.TrimEnd('\r', '\n');
+                if (ReplaceItem == string.Empty) continue;
 
-                if (scintillaFind.FindReplace.FindAll(FindItem, false, true) > 0)
+                string intermediate = intermediateReplacements[i];
+                if (myBeforeFindReplace.FindAll(FindItem, false, true).Count > 0)
                 {
-                    string ReplaceItem = uxReplaceList.Lines[i].Text.TrimEnd('\r', '\n');
-                    if (ReplaceItem != string.Empty)
-                    {
-                        string intermediate = intermediateReplacements[i];
-                        int count = scintillaReplace.FindReplace.ReplaceAll(FindItem, intermediate, SearchFlags.None, false, true);
-                    }
+                    int count = myAfterFindReplace.ReplaceAll(FindItem, intermediate, SearchFlags.None, false, false);
                 }
             }
+
+            ReplaceAllInstances.Clear();
 
             //Replace intermediate text
-            for (int i = 0; i < uxFindList.Lines.Count; i++)
+            for (int i = 0; i < uxReplaceList.Lines.Count; i++)
             {
                 string FindItem = uxFindList.Lines[i].Text.TrimEnd('\r', '\n');
-                if (FindItem == string.Empty)
-                    continue;
+                if (FindItem == string.Empty) continue;
+                string ReplaceItem = uxReplaceList.Lines[i].Text.TrimEnd('\r', '\n');
+                if (ReplaceItem == string.Empty) continue;
 
-                if (scintillaFind.FindReplace.FindAll(FindItem, false, true) > 0)
+                string intermediate = intermediateReplacements[i];
+                if (myAfterFindReplace.FindAll(intermediate, false, false).Count > 0)
                 {
-                    string ReplaceItem = uxReplaceList.Lines[i].Text.TrimEnd('\r', '\n');
-                    if (ReplaceItem != string.Empty)
-                    {
-                        string intermediate = intermediateReplacements[i];
-                        int count = scintillaReplace.FindReplace.ReplaceAll(intermediate, ReplaceItem, SearchFlags.None, false, true);
-                    }
+                    int count = myAfterFindReplace.ReplaceAll(intermediate, ReplaceItem, SearchFlags.None, false, true);
                 }
             }
+
+            #region Find Highlighted Text
+
+            var indicator = myAfterFindReplace.Indicator;
+            var bitmapFlag = (1 << indicator.Index);
+
+            var startPos = 0;
+            var endPos = 0;
+
+            do
+            {
+                startPos = indicator.Start(endPos);
+                endPos = indicator.End(startPos);
+
+                // Is this range filled with our indicator (8)?
+                var bitmap = scintillaReplace.IndicatorAllOnFor(startPos);
+                var filled = ((bitmapFlag & bitmap) == bitmapFlag);
+                if (filled)
+                {
+                    // Do stuff with indicator range
+                    Debug.WriteLine(scintillaReplace.GetTextRange(startPos, (endPos - startPos)));
+                    ReplaceAllInstances.Add(new ScintillaNET_FindReplaceDialog.CharacterRange(startPos, endPos));
+                }
+            } while (endPos != 0 && endPos < scintillaReplace.TextLength);
+
+            #endregion Find Highlighted Text
+
+            //Pass on all results
+            findAllResultsPanel1.UpdateFindAllResults(myAfterFindReplace, ReplaceAllInstances);
         }
 
         private void scintillaFind_Scroll(object sender, ScrollEventArgs e)
@@ -226,7 +333,7 @@
 
                     scintillaReplace.Markers[3].DeleteAll();
                     scintillaReplace.Lines[line].MarkerAdd(3);
-              break;
+                    break;
 
                 case UpdateChange.VScroll:
                     if (scintillaReplace.FirstVisibleLine != scintillaFind.FirstVisibleLine)
@@ -264,7 +371,7 @@
 
                     scintillaReplace.Markers[3].DeleteAll();
                     scintillaReplace.Lines[line].MarkerAdd(3);
-                break;
+                    break;
 
                 case UpdateChange.VScroll:
                     if (scintillaFind.FirstVisibleLine != scintillaReplace.FirstVisibleLine)
@@ -276,17 +383,15 @@
             }
         }
 
+        private void uxCaseSensitive_CheckedChanged(object sender, EventArgs e)
+        {
+            //PerformReplacement();
+        }
+
         private void uxFindList_TextChanged(object sender, EventArgs e)
         {
             //PerformReplacement();
         }
-
-        private void uxReplaceList_TextChanged(object sender, EventArgs e)
-        {
-            //PerformReplacement();
-        }
-
-        #endregion Methods
 
         private void uxFindList_UpdateUI(object sender, UpdateUIEventArgs e)
         {
@@ -320,6 +425,11 @@
             }
         }
 
+        private void uxReplaceList_TextChanged(object sender, EventArgs e)
+        {
+            //PerformReplacement();
+        }
+
         private void uxReplaceList_UpdateUI(object sender, UpdateUIEventArgs e)
         {
             switch (e.Change)
@@ -351,5 +461,7 @@
                     break;
             }
         }
+
+        #endregion Methods
     }
 }
