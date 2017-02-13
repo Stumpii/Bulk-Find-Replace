@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Bulk Find and Replace"
-#define MyAppVersion "1.0.1"
+#define MyAppVersion "1.0.2"
 #define MyAppPublisher "Steve Towner"
 #define MyAppURL "http://www.thefoolonthehill.net/drupal/"
 #define MyAppExeName "Bulk Find and Replace.exe"
@@ -39,11 +39,12 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 Source: "..\Source\Bulk Find and Replace\bin\Debug\Bulk Find and Replace.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Source\Bulk Find and Replace\bin\Debug\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Source\Bulk Find and Replace\bin\Debug\ScintillaNET.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Source\Bulk Find and Replace\bin\Debug\ScintillaNET FindReplaceDialog.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Source\Bulk Find and Replace\bin\Debug\SNT.FileFolderTextBox.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Source\Bulk Find and Replace\bin\Debug\SNT.Tools.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Auto Update\Update Program Settings.ini"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\..\AutoIt Scripts\Update Program\Source\NoUpdate.htm"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\..\AutoIt Scripts\Update Program\Source\Update Program.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\..\..\Programming (Work)\AutoIt Scripts\Update Program\Source\InnoSetup\Update Program.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\..\..\Programming (Work)\AutoIt Scripts\Update Program\Source\InnoSetup\NoUpdate.htm"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

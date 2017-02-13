@@ -1,0 +1,15 @@
+TODO - update this:
+
+
+Rev 1.17.0 - 4 Feb 17
+	F2 now edits the currently selected tag.
+	Added button to import Tagname usage report file to update tag selector control.
+	Updated SNTTools to enable filtering from the clipboard.
+	Find/Replace tool creates data in the 'new file'.
+	Improved application detection.
+	Allow custom editor scaling from Options tab.
+	Made selected tag move to top before deletion.
+	When searching for local tagnames, tagname list goes to the 'Tagname' node instead of staying on the last node.
+	Added ability to cancel the Floating Tagname process.
+	Floating Tagname process now defaults to the current Export folder.
+	Function keys and key shortbuts only work when TriStation is the active window. The exception being ESCAPE which will cancel an action even if TriStation does not have focus.
