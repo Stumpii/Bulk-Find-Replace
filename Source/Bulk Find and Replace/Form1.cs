@@ -77,6 +77,8 @@
             {
                 MessageBox.Show("Error writing output: " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
+            MessageBox.Show("Finished", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void fileTextboxInput_SelectedItemChanged(bool IsValid)
