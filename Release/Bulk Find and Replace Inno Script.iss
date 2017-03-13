@@ -25,6 +25,9 @@ OutputBaseFilename=Bulk Find and Replace Setup v{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 OutputDir=.
+ShowLanguageDialog=no
+DisableProgramGroupPage=yes
+DisableReadyPage=True
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -33,14 +36,14 @@ Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
-Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
+Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
 Source: "..\Source\Bulk Find and Replace\bin\Debug\Bulk Find and Replace.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Source\Bulk Find and Replace\bin\Debug\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Source\Bulk Find and Replace\bin\Debug\ScintillaNET.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Source\Bulk Find and Replace\bin\Debug\ScintillaNET FindReplaceDialog.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Source\Bulk Find and Replace\bin\Debug\SNT.FileFolderTextBox.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Source\Bulk Find and Replace\bin\Debug\SNT.FileFolderTextBox.3.5.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Source\Bulk Find and Replace\bin\Debug\SNT.Tools.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Auto Update\Update Program Settings.ini"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\..\..\..\Programming (Work)\AutoIt Scripts\Update Program\Source\InnoSetup\Update Program.exe"; DestDir: "{app}"; Flags: ignoreversion
@@ -51,6 +54,7 @@ Source: "..\..\..\..\..\Programming (Work)\AutoIt Scripts\Update Program\Source\
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
+Name: "{group}\Check for updates"; Filename: "{app}\Update Program.exe"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon
 
