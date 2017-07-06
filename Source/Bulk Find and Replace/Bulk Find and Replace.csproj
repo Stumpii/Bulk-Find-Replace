@@ -88,8 +88,8 @@
     <Reference Include="SNT.FileFolderTextBox.3.5">
       <HintPath>..\..\..\..\_Standard Components\SNT.FileFolderTextBox\SNT.FileFolderTextBox.3.5\bin\Release\SNT.FileFolderTextBox.3.5.dll</HintPath>
     </Reference>
-    <Reference Include="SNT.Tools35">
-      <HintPath>..\..\..\..\_Standard Components\SNT.Tools\SNT.Tools.3.5\bin\Release\SNT.Tools35.dll</HintPath>
+    <Reference Include="SNT.Tools35, Version=1.6.0.19122, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SNT.Tools.1.6.0\lib\net35\SNT.Tools35.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
